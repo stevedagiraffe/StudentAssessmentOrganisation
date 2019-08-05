@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { View, Text, Button } from 'react-native'
 import { connect } from 'react-redux'
 
+
+
 class Dashboard extends Component {
     static navigationOptions = {
-        title: 'Dashboard'
+        title: "Dashboard"
     };
 
     render() {
@@ -12,7 +14,8 @@ class Dashboard extends Component {
 
         return (
             <View>
-                <Text></Text>
+
+                <Text>Current: Test</Text>
                 <Button
                     title="Gotonother"
                     onPress={() => navigate('Dashboard')}
