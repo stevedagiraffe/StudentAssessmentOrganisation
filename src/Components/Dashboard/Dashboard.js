@@ -7,7 +7,7 @@ import { actionCreators } from "../../Store/Reducers/Dashboard"
 import { bindActionCreators } from '../../../../../Users/sysadmin/AppData/Local/Microsoft/TypeScript/3.5/node_modules/redux';
 class Dashboard extends Component {
     static navigationOptions = {
-        title: 'Dashboard'
+        title: "Dashboard"
     };
     
 
@@ -23,7 +23,7 @@ class Dashboard extends Component {
 
         return (
             <View style={Styles.layout}>
-                <Text></Text>
+                <Text>Current: {this.props.items.splits[this.props.items.selectedSplit].name}</Text>
                 <SplitInfoCard
                     onStart={navigate('Split_Session')}
                     onDetails={navigate('Split_Details')}
