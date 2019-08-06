@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
 import {Text, Button} from 'react-native-elements'
-import Styles from "./SplitInfoCardStyles"
+import Styles from "./SplitInfoCardStyle"
 
 const splitInfoCard = (props) => {
     return (
