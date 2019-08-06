@@ -19,17 +19,19 @@ class Dashboard extends Component {
         this.props.navigation.navigate('Split_Session');
     }
     render() {
+        
         const { navigate } = this.props.navigation;
+        const currentSplit = this.props.items.splits[this.props.items.selectedSplit];
 
         return (
             <View style={Styles.layout}>
-                <Text>Current: {this.props.items.splits[this.props.items.selectedSplit].name}</Text>
+                <Text>Current: {currentSplit.name}</Text>
                 <SplitInfoCard
                     onStart={navigate('Split_Session')}
                     onDetails={navigate('Split_Details')}
-                    minStart={this.props.items.splits[this.props.items.selectedSplit].minStart}
-                    maxStart={this.props.items.splits[this.props.items.selectedSplit].maxStart}
-                    backgroundColor={this.props.items.splits[this.props.items.selectedSplit].backgroundColor}
+                    minStart={currentSplit.minStart}
+                    maxStart={currentSplit.maxStart}
+                    backgroundColor={currentSplit.backgroundColor}
                 />
                 <Button
                     title="Gotonother"
