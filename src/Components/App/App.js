@@ -29,7 +29,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={Store}>
-        <Navigation />
+        <Navigation style={{flex: 1}}/>
       </Provider>
     );
   }

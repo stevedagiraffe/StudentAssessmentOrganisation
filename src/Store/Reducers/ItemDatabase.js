@@ -4,10 +4,16 @@ const INITIAL_STATE = {
 
     subjects: {},
     assignments: {},
-    goals: {},
+    goals: {
+        "0": {
+            name: "Ex Goal"
+        }
+    },
     splits: {
         "0": {
             name: "Bob",
+            backgroundColor: 'red',
+            goal: "0"
         }
     },
 
