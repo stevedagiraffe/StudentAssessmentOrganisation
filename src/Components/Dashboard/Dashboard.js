@@ -26,6 +26,7 @@ class Dashboard extends Component {
         const goalName = this.props.items.goals[currentSplit.goal].name;
 
 
+
         return (
             <View style={Styles.layout}>
                 <SplitInfoCard
