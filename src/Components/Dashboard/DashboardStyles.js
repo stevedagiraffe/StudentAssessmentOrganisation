@@ -7,16 +7,25 @@ const dashboardStyles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     greeting: {
-        flex: 5
+
+        flex: 10,
+        fontSize: 30,
+        textAlign: 'center',
     },
     upcoming: {
-        flex: 2,
+        flex: 3,
+        fontSize: 20,
+        
+        
     },
     buttonSpace: {
-        flex: 10,
+        flex: 25,
         backgroundColor: 'gray',
         justifyContent: 'space-evenly',
         flexDirection: 'row'
+    },
+    splitInfoCard: {
+        flex: 35
     }
     
 });

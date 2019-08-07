@@ -4,6 +4,7 @@ import { Text, Button } from 'react-native-elements';
 import { connect } from 'react-redux'
 import Styles from "./DashboardStyles"
 import SplitInfoCard from "./SplitInfoCard/SplitInfoCard"
+import BottomBtns from "./BottomBtns/DashboardBottomBtns"
 //import { actionCreators } from "../../Store/Reducers/Dashboard"
 import { bindActionCreators } from 'redux'
 class Dashboard extends Component {
@@ -29,10 +30,10 @@ class Dashboard extends Component {
 
         return (
             <View style={Styles.layout}>
-                <Text h1 style={Styles.greeting}>Hi, Bob!</Text>
+                <Text style={Styles.greeting}>Hi, Bob!</Text>
                 <Text style={Styles.upcoming}>Upcoming Split:</Text>
                 <SplitInfoCard
-                    flex={30}
+                    flex={Styles.splitInfoCard.flex}
                     h1={currentSplit.name}
                     h2={goalName}
                     onStart={navigate('Split_Session')}
@@ -41,28 +42,12 @@ class Dashboard extends Component {
                     maxStart={currentSplit.maxStart}
                     backgroundColor={currentSplit.backgroundColor}
                 />
-                <View style={Styles.buttonSpace}>
-                    <View style={{ flex: 80, justifyContent: 'space-evenly' }}>
-                        <Button
-                            title="Gotonother"
-                            onPress={() => navigate('Calendar')}
-                            style={{ backgroundColor: 'lightblue', flex: 50}}
-
-                        />
-                        <Button
-                            title="Gotonother"
-                            onPress={() => navigate('Calendar')}
-                            style={{ backgroundColor: 'lightblue', flex: 50 }}
-
-                        />
-
-                    </View>
-                    <Button
-                        title={"Options"}
-                        style={{backgroundColor: 'blue', flex: 20, }}
-                    />
-
-                </View>
+                <BottomBtns
+                spaceStyle={Styles.buttonSpace}
+                toCalendar={() => navigate('Calendar')}
+                toSubject={null}
+                toSettings={null}
+                />
 
             </View>
         );
