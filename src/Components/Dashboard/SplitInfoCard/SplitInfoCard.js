@@ -5,22 +5,22 @@ import Styles from "./SplitInfoCardStyle"
 
 const splitInfoCard = (props) => {
     return (
-        <View>
+        <View style={{flex: 2}}>
             <Text>Upcoming Split:</Text>
             <View style={Styles(props.backgroundColor).box}>
-                <Text>{props.h1}</Text>
-                <Text>{props.h2}</Text>
-                <Text>Starts: {props.minStart}-{props.maxStart}</Text>
-                <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
+                <Text style={{flex: 1}}>{props.h1}</Text>
+                <Text style={{flex: 1}}>{props.h2}</Text>
+                <Text style={{flex: 1}}>Starts: {props.minStart}-{props.maxStart}</Text>
+                <View style={{flex: 3, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
                     <Button
                         title={"Start"}
                         onPress={props.onStart}
-                        buttonStyle={{color: 'blue'}}
+                        buttonStyle={{backgroundColor: 'blue', flex: 1}}
                         />
                     <Button
                         title={"Details"}
                         onPress={props.onDetails}
-                        buttonStyle={{color: 'blue'}}
+                        buttonStyle={{backgroundColor: 'blue', flex: 1}}
                         />
                 </View>
             </View>

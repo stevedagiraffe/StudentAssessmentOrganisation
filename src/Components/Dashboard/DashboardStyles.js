@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native'
 
 const dashboardStyles = StyleSheet.create({
     layout: {
-        
+        flexDirection: "column",
         flex: 1
     },
     greeting: {
