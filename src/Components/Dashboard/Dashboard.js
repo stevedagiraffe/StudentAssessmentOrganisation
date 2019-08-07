@@ -29,7 +29,10 @@ class Dashboard extends Component {
 
         return (
             <View style={Styles.layout}>
+                <Text h1 style={Styles.greeting}>Hi, Bob!</Text>
+                <Text style={Styles.upcoming}>Upcoming Split:</Text>
                 <SplitInfoCard
+                    flex={30}
                     h1={currentSplit.name}
                     h2={goalName}
                     onStart={navigate('Split_Session')}
@@ -38,12 +41,29 @@ class Dashboard extends Component {
                     maxStart={currentSplit.maxStart}
                     backgroundColor={currentSplit.backgroundColor}
                 />
-                <Button
-                    title="Gotonother"
-                    onPress={() => navigate('Calendar')}
-                    style={{flex: 1}}
+                <View style={Styles.buttonSpace}>
+                    <View style={{ flex: 80, justifyContent: 'space-evenly' }}>
+                        <Button
+                            title="Gotonother"
+                            onPress={() => navigate('Calendar')}
+                            style={{ backgroundColor: 'lightblue', flex: 50}}
 
-                />
+                        />
+                        <Button
+                            title="Gotonother"
+                            onPress={() => navigate('Calendar')}
+                            style={{ backgroundColor: 'lightblue', flex: 50 }}
+
+                        />
+
+                    </View>
+                    <Button
+                        title={"Options"}
+                        style={{backgroundColor: 'blue', flex: 20, }}
+                    />
+
+                </View>
+
             </View>
         );
     }

@@ -1,12 +1,11 @@
 import {StyleSheet} from 'react-native'
 
-const splitInfoCardStyles = backgroundColor => StyleSheet.create({
-    box: {
-        backgroundColor: backgroundColor,
 
-
-    }
-
+export default splitInfoCardStyle = (props) => StyleSheet.create({
+    layout: {
+        flex: props.flex,
+        backgroundColor: props.backgroundColor,
+        maxHeight: 300,
+        justifyContent: 'flex-start',
+    },
 });
-
-export default splitInfoCardStyles;
