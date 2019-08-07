@@ -10,11 +10,17 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux'
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import Dashboard from "../Dashboard/Dashboard";
+import Calendar from "../CalendarWindow/CalendarWindow"
 import Store from "../../Store/Store"
 
 const RootNavigator = createStackNavigator({
   Dashboard: {screen: Dashboard},
-});
+  Calendar: {screen: Calendar}
+  },
+  { 
+    initialRouteName: "Dashboard",
+  },
+  );
 
 const Navigation = createAppContainer(RootNavigator);
 
