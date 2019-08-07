@@ -3,8 +3,8 @@ import { View, Text, Button } from 'react-native'
 import { connect } from 'react-redux'
 import Styles from "./DashboardStyles"
 import SplitInfoCard from "./SplitInfoCard/SplitInfoCard"
-import { actionCreators } from "../../Store/Reducers/Dashboard"
-import { bindActionCreators } from '../../../../../Users/sysadmin/AppData/Local/Microsoft/TypeScript/3.5/node_modules/redux';
+//import { actionCreators } from "../../Store/Reducers/Dashboard"
+import { bindActionCreators } from 'redux'
 class Dashboard extends Component {
     static navigationOptions = {
         title: "Dashboard"
@@ -21,7 +21,7 @@ class Dashboard extends Component {
     render() {
         
         const { navigate } = this.props.navigation;
-        const currentSplit = this.props.items.splits[this.props.items.selectedSplit];
+        const currentSplit = this.props.items.splits[this.props.items.selected.split];
 
         return (
             <View style={Styles.layout}>
@@ -35,7 +35,7 @@ class Dashboard extends Component {
                 />
                 <Button
                     title="Gotonother"
-                    onPress={() => navigate('Dashboard')}
+                    onPress={() => navigate('Calendar')}
                 />
             </View>
         );
@@ -46,8 +46,8 @@ export default connect(
     state => {
         return {
             dashboard: state.dashboard,
-            items: null, //Event
+            items: state.itemDatabase, //Event
         }
     },
-    dispatch => bindActionCreators(actionCreators, dispatch)
+    dispatch => bindActionCreators({}, dispatch)
 )(Dashboard);
